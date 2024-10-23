@@ -51,10 +51,25 @@ class Router {
     showHome() {
         const content = document.getElementById('page-content');
         content.innerHTML = `
-            <div class="page">
-                <h1>Bienvenidos a mi sitio</h1>
-                <p>Esta es la página principal donde podrás encontrar información sobre mí y mis últimos artículos.</p>
+        <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-stars"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Let's build from here</h1>
+            <p class="hero-subtitle">
+                El hogar de más de 100 millones de desarrolladores que trabajan juntos para dar forma al futuro del software.
+            </p>
+            <div class="hero-form">
+                <input type="email" class="hero-input" placeholder="Email address">
+                <button class="hero-button">Sign up for GitHub</button>
             </div>
+            <div class="hero-stats">
+                <div class="stat">100+ millones de repositorios</div>
+                <div class="stat">90+ millones de desarrolladores</div>
+                <div class="stat">4+ millones de organizaciones</div>
+            </div>
+        </div>
+    </section>
         `;
         document.getElementById('pagination').innerHTML = '';
     }
@@ -162,10 +177,65 @@ class Router {
     showAbout() {
         const content = document.getElementById('page-content');
         content.innerHTML = `
-            <div class="page">
-                <h1>Sobre Mí</h1>
-                <p>Aquí puedes escribir información sobre ti y tu experiencia.</p>
+        <section class="about-section">
+        <div class="background-grid"></div>
+        <div class="about-container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre Mí</h2>
             </div>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <p class="about-text">
+                        Soy un <span class="highlight">desarrollador web apasionado</span> con más de 5 años de experiencia 
+                        en la creación de experiencias digitales únicas. Mi enfoque combina creatividad técnica 
+                        con soluciones prácticas para construir aplicaciones web que no solo funcionan 
+                        perfectamente, sino que también cautivan a los usuarios.
+                    </p>
+
+                    <p class="about-text">
+                        Mi viaje en el desarrollo web comenzó con curiosidad y se convirtió en una 
+                        pasión por crear soluciones innovadoras. Me especializo en arquitecturas frontend 
+                        modernas y tengo un profundo interés en la <span class="highlight">experiencia de usuario</span>.
+                    </p>
+
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            Frontend Development
+                        </div>
+                        <div class="skill-item">
+                            UI/UX Design
+                        </div>
+                        <div class="skill-item">
+                            React & Next.js
+                        </div>
+                        <div class="skill-item">
+                            Node.js
+                        </div>
+                    </div>
+
+                    <div class="experience-list">
+                        <div class="experience-item">
+                            <h3 class="experience-title">Senior Frontend Developer</h3>
+                            <div class="experience-date">2020 - Presente</div>
+                            <p>Liderando el desarrollo de aplicaciones web escalables y mantenibles.</p>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3 class="experience-title">UI/UX Designer</h3>
+                            <div class="experience-date">2018 - 2020</div>
+                            <p>Diseño de interfaces intuitivas y experiencias de usuario memorables.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo7KPRp_aP1IEf7xGDxapy3cQMh46THb9HG-5PYkwnomKrXlerQE9JozfiTJRUOiP7Fp5XIeKwTKSXPEvyoXftgcRjak59f_s_EATeBQTRKWg5l_DzUrx8nP_RLlR7PTrwRsziNrdROjBrbMwnB6L3yh4eK0NUpSF4sYiybIn7q5u8sBUcaNrJe3Z3XPw/s650-rw/E-meeting%20with%20team@1x_resized.png" alt="Profile" class="about-image">
+                    <div class="image-border"></div>
+                </div>
+            </div>
+        </div>
+    </section>
         `;
         document.getElementById('pagination').innerHTML = '';
     }
@@ -173,15 +243,80 @@ class Router {
     showContact() {
         const content = document.getElementById('page-content');
         content.innerHTML = `
-            <div class="page">
-                <h1>Contacto</h1>
-                <form class="contact-form" onsubmit="event.preventDefault();">
-                    <input type="text" placeholder="Nombre" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Mensaje" rows="5" required></textarea>
-                    <button type="submit">Enviar Mensaje</button>
+        <section class="contact-section">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">
+                    ¿Tienes un proyecto en mente? Ponte en contacto conmigo 
+                    y hagamos algo increíble juntos.
+                </p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                        <div class="contact-text">
+                            <a href="mailto:hello@ejemplo.com">hello@ejemplo.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div class="contact-text">
+                            123 Calle Ejemplo<br>
+                            Ciudad, País 12345
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <div class="contact-text">
+                            <a href="tel:+123456789">+1 (234) 567-89</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Asunto</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Mensaje</label>
+                        <textarea class="form-textarea" required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-button">Enviar mensaje</button>
                 </form>
             </div>
+        </div>
+    </section>
         `;
         document.getElementById('pagination').innerHTML = '';
     }
