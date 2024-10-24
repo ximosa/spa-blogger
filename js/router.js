@@ -55,18 +55,26 @@ class Router {
         <div class="hero-background"></div>
         <div class="hero-stars"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Let's build from here</h1>
+            <h1 class="hero-title"> Soy experto en WordPress</h1>
             <p class="hero-subtitle">
-                El hogar de más de 100 millones de desarrolladores que trabajan juntos para dar forma al futuro del software.
+            Soy experto en WordPress y te ayudaré a crear un sitio web profesional y personalizado.
             </p>
             <div class="hero-form">
-                <input type="email" class="hero-input" placeholder="Email address">
-                <button class="hero-button">Sign up for GitHub</button>
-            </div>
+        <h2>¿Listo para dar el siguiente paso?</h2>
+        <p>
+            Estamos aquí para ayudarte a alcanzar tus objetivos. Estoy
+            dispuesto a escuchar tus necesidades y encontrar la mejor solución para tu proyecto.
+            No esperes más para hacer realidad tus ideas.
+        </p>
+        <div class="spacer"></div>
+        <p>
+        <a class="hero-button" href="#/contacto" data-navigo>Póngase en contacto</a>
+        </p>
+    </div>
             <div class="hero-stats">
-                <div class="stat">100+ millones de repositorios</div>
-                <div class="stat">90+ millones de desarrolladores</div>
-                <div class="stat">4+ millones de organizaciones</div>
+                <div class="stat">Amplia experiencia en WordPress</div>
+                <div class="stat">Soy un desarrollador web full-stack con amplia experiencia</div>
+                <div class="stat">Experto en HTML, CSS, JavaScript y PHP</div>
             </div>
         </div>
     </section>
@@ -84,6 +92,7 @@ class Router {
         const content = document.getElementById('page-content');
         const paginationContainer = document.getElementById('pagination');
         
+    
         // Mostrar contenido
         if (!data.items || data.items.length === 0) {
             content.innerHTML = `
@@ -187,7 +196,7 @@ class Router {
             <div class="about-grid">
                 <div class="about-content">
                     <p class="about-text">
-                        Soy un <span class="highlight">desarrollador web apasionado</span> con más de 5 años de experiencia 
+                        Soy un <span class="highlight">desarrollador web apasionado</span> con más de 20 años de experiencia 
                         en la creación de experiencias digitales únicas. Mi enfoque combina creatividad técnica 
                         con soluciones prácticas para construir aplicaciones web que no solo funcionan 
                         perfectamente, sino que también cautivan a los usuarios.
@@ -258,7 +267,7 @@ class Router {
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
                         </svg>
                         <div class="contact-text">
-                            <a href="mailto:hello@ejemplo.com">hello@ejemplo.com</a>
+                            <a href="mailto:ximosa@gmail.com">ximosa@gmail.com</a>
                         </div>
                     </div>
                     
@@ -268,8 +277,9 @@ class Router {
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
                         <div class="contact-text">
-                            123 Calle Ejemplo<br>
-                            Ciudad, País 12345
+                           Formulario Seguro<br>
+                            Con la seguruidad de Google
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe5mIidz219dTyJ7A6-Sn8kjcMXtyQm6LPWAywJ2_EKektjew/viewform" rel="nofollow" target="_blank">Formulario </a>
                         </div>
                     </div>
                     
@@ -278,7 +288,7 @@ class Router {
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
                         <div class="contact-text">
-                            <a href="tel:+123456789">+1 (234) 567-89</a>
+                        <a href="https://wa.me/34667590554/?text=Hola me gustaria hablar con usted sobre el siguiente tema:">Whatsapp </a>
                         </div>
                     </div>
                 </div>
@@ -291,25 +301,20 @@ class Router {
             </div>
 
             <div class="contact-form">
-                <form>
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdWITCtTPATcvRxIKllLA36x0-phthsW_NGj8UX5_QsB66FoA/formResponse">
                     <div class="form-group">
                         <label class="form-label">Nombre</label>
-                        <input type="text" class="form-input" required>
+                        <input type="text" name="entry.1513806417" class="form-input" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Asunto</label>
-                        <input type="text" class="form-input" required>
+                        <input type="email" name="entry.1644994739" class="form-input" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Mensaje</label>
-                        <textarea class="form-textarea" required></textarea>
+                        <textarea name="entry.1001676245" class="form-textarea" required></textarea>
                     </div>
 
                     <button type="submit" class="form-button">Enviar mensaje</button>
