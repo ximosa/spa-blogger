@@ -6,10 +6,30 @@ class BloggerAPI {
         this.POSTS_PER_PAGE = 10;
         this.cache = new Map();
         this.pageTokens = [''];  // Primer token vacío para la primera página
+        this.previousState = null; // Almacena el estado anterior
+    }
+
+    saveCurrentState() {
+        this.previousState = {
+            cache: new Map(this.cache),
+            pageTokens: [...this.pageTokens]
+        };
+    }
+
+    rollbackToPreviousState() {
+        if (this.previousState) {
+            this.cache = new Map(this.previousState.cache);
+            this.pageTokens = [...this.previousState.pageTokens];
+            return true;
+        }
+        return false;
     }
 
     async getPosts(page = 1) {
         const cacheKey = `posts_page_${page}`;
+        
+        // Guardar estado actual antes de hacer cambios
+        this.saveCurrentState();
         
         if (this.cache.has(cacheKey)) {
             return this.cache.get(cacheKey);
@@ -25,9 +45,15 @@ class BloggerAPI {
             console.log('Fetching posts from:', url);
             
             const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Error en la respuesta de la API');
+            }
+            
             const data = await response.json();
             
-            console.log('API Response:', data);
+            if (!data.items && page === 1) {
+                throw new Error('No se encontraron posts');
+            }
 
             // Guardar el token para la siguiente página
             if (data.nextPageToken && !this.pageTokens.includes(data.nextPageToken)) {
@@ -41,30 +67,39 @@ class BloggerAPI {
                 totalPages: this.pageTokens.length,
                 hasNextPage: !!data.nextPageToken
             };
-
-            console.log('Processed result:', result);
             
             this.cache.set(cacheKey, result);
             return result;
         } catch (error) {
             console.error('Error fetching posts:', error);
+            // Intentar rollback al estado anterior
+            if (this.rollbackToPreviousState()) {
+                console.log('Rollback exitoso al estado anterior');
+                return this.cache.get(cacheKey) || {
+                    items: [],
+                    totalItems: 0,
+                    currentPage: page,
+                    totalPages: 1,
+                    hasNextPage: false,
+                    error: error.message
+                };
+            }
             return {
                 items: [],
                 totalItems: 0,
                 currentPage: page,
                 totalPages: 1,
-                hasNextPage: false
+                hasNextPage: false,
+                error: error.message
             };
         }
     }
 
     async ensurePageToken(targetPage) {
-        // Si ya tenemos el token para esta página, no hacemos nada
         if (this.pageTokens.length >= targetPage) {
             return;
         }
 
-        // Obtener tokens hasta llegar a la página deseada
         let currentPage = this.pageTokens.length;
         let lastToken = this.pageTokens[currentPage - 1];
 
