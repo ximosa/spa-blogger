@@ -4,7 +4,7 @@
 [![SPA](https://img.shields.io/badge/SPA-Single%20Page%20Application-blue.svg)](https://developer.mozilla.org/es/docs/Glossary/SPA)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-> Aplicación web moderna de blog desarrollada como Single Page Application (SPA) utilizando JavaScript puro. Perfecta para crear contenido dinámico con una experiencia de usuario fluida y responsive.
+> Aplicación web moderna de blog desarrollada como Single Page Application (SPA) utilizando JavaScript puro. Perfecta para crear contenido dinámico con una experiencia de usuario fluida y responsive. Utilizando la api de blogger.
 
 ## ✨ Características Principales
 
