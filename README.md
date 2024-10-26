@@ -80,8 +80,8 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ¿Preguntas o sugerencias? Abre un issue o contáctame:
 
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- Email: tu-email@ejemplo.com
+- GitHub: [@tu-usuario](https://github.com/ximosa)
+- Email: info@webgae.com.com
 
 ---
 ⭐️ ¡Si te gusta este proyecto, dale una estrella!
